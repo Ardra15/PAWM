@@ -1,0 +1,90 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+body {
+    font-family:sans-serif;
+    background-color: #6DAFE9;
+    text-align: center;
+    margin-top: 0px;
+    padding: 20px;
+}
+
+header {
+    margin-top: 100px;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+h1 {
+    color: #fff;
+    font-size: 2rem;
+}
+
+p {
+    font-size: 1.1rem;
+    color: #fff;
+}
+
+#matching-area {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#words, #synonyms {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 200px;
+}
+
+#words ul, #synonyms ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#words li, #synonyms li {
+    margin: 10px 0;
+    padding: 15px;
+    background-color: #e3e3e3;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: background-color 0.3s;
+}
+
+#words li:hover, #synonyms li:hover {
+    background-color: #d1d1d1;
+}
+
+#canvas {
+    border: 2px solid #ccc;
+    background-color: #fdfdfd;
+    margin: 0 20px;
+}
+
+button{
+    padding: 10px 25px;
+    background-color: #126AB2;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #126AB2;
+}
+
+#result {
+    margin-top: 20px;
+    font-size: 1.2rem;
+    font-weight: bold;
+}

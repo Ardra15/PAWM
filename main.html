@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LabDra</title>
+    <link rel="stylesheet" href="home.css">
+</head>
+<body>
+    <div id="navbar"></div>
+    <section class="home">
+        <div class="home-logo">
+            <img id="LogoHero" src="stocks/besar.png" alt="">
+        </div>
+        <div class="home-text">
+            <h2>LabDuT</h2>
+            <h1>Your Favorite English Games</h1>
+            <p>Platform pembelajaran dan permainan untuk mempelajari bahasa Inggris.</p>
+        </div>
+    </section>
+    <section class="feature">
+        <div class="card-container">
+            <div class="card">
+                <img src="stocks/learning.jpg" alt="">
+                <div class="card-content">
+                    <h3>Belajar</h3>
+                    <p>Belajar kosakata bahasa Inggris dengan berbagai metode yang menyenangkan.</p>
+                    <a href="https://www.merriam-webster.com/" class="btn">Read More</a>
+                </div>
+            </div>
+            <div class="card">
+                <img src="stocks/games.jpg" alt="">
+                <div class="card-content">
+                    <h3>Mainan</h3>
+                    <p>Mainkan permainan seru untuk mengasah kemampuan bahasa Inggrismu.</p>
+                    <a href="lab.html" class="btn">Read More</a>
+                </div>
+            </div>
+            <div class="card">
+                <img src="stocks/quiz.jpg" alt="">
+                <div class="card-content">
+                    <h3>Quiz</h3>
+                    <p>Tantang dirimu dengan berbagai kuis yang tersedia.</p>
+                    <a href="" class="btn">Coming Soon</a>
+                </div>
+            </div>
+
+        </div>
+        
+    </section>
+    <script>
+    fetch('navbar.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('navbar').innerHTML = data;
+                
+                let menuList = document.getElementById('menuList');
+                menuList.style.maxHeight = '0px';
+
+                document.querySelector('.menu-icon i').addEventListener('click', toggleMenu);
+                function toggleMenu() {
+                    if (menuList.style.maxHeight == '0px') {
+                        menuList.style.maxHeight = '300px';
+                    } else {
+                        menuList.style.maxHeight = '0px';
+                    }
+                }
+
+            })
+            .catch(error => console.error('Error loading navbar:', error));
+    
+    
+    </script>
+<script src="https://kit.fontawesome.com/33df2c96d2.js" crossorigin="anonymous"></script>
+</body>
+</html>

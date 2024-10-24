@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word Synonym Matching with Levels</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="navbar"></div>
+    <header>
+        <h1>Word Synonym Matching</h1>
+        <p>Hubungkan kata dengan sinonim yang tepat.</p>
+
+        <label for="level-select">Pilih Level:</label>
+        <select id="level-select" onchange="changeLevel()">
+            <option value="1">Level 1 - Mudah</option>
+            <option value="2">Level 2 - Sedang</option>
+            <option value="3">Level 3 - Menengah</option>
+            <option value="4">Level 4 - Sulit</option>
+        </select>
+    </header>
+
+    <section id="matching-area">
+        <div id="words">
+            <h2>Words</h2>
+            <ul id="words-list"></ul>
+        </div>
+        
+        <canvas id="canvas" width="700" height="500"></canvas>
+
+        <div id="synonyms">
+            <h2>Synonyms</h2>
+            <ul id="synonyms-list"></ul>
+        </div>
+    </section>
+
+    <footer>
+        <button onclick="checkAnswers()">Cek Jawaban</button>
+        <button onclick="restartGame()">Restart</button>
+        <p id="result"></p>
+    </footer>
+    <script>
+        fetch('navbar.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('navbar').innerHTML = data;
+                    
+                    let menuList = document.getElementById('menuList');
+                    menuList.style.maxHeight = '0px';
+                    
+                    document.querySelector('.menu-icon i').addEventListener('click', toggleMenu);
+                    function toggleMenu() {
+                        if (menuList.style.maxHeight == '0px') {
+                            menuList.style.maxHeight = '300px';
+                        } else {
+                            menuList.style.maxHeight = '0px';
+                        }
+                    }
+    
+                })
+                .catch(error => console.error('Error loading navbar:', error));
+        
+        
+        </script>
+    <script src="script.js"></script>
+    <script src="https://kit.fontawesome.com/33df2c96d2.js" crossorigin="anonymous"></script>
+</body>
+</html>
